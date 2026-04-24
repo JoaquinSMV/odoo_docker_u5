@@ -20,6 +20,9 @@
             <field name="model">academia.estudiante</field>
             <field name="arch" type="xml">
                 <form string="Estudiante">
+                    <header>
+                        <button name="%(action_report_estudiante)d" string="Imprimir Informe" type="action" class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
