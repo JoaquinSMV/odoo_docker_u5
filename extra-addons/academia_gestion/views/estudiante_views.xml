@@ -45,7 +45,7 @@
                     <field name="name"/>
                     <field name="email"/>
                     <field name="profesor_ids"/>
-                    <filter string="Menores de 18" name="menores_18" domain="[(\'edad\', \'<\', 18)]"/>
+                    <filter string="Menores de 18" name="menores_18" domain="[('edad', '&lt;', 18)]"/>
                 </search>
             </field>
         </record>
