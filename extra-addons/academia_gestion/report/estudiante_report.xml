@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <report
+            id="action_report_estudiante"
+            model="academia.estudiante"
+            string="Informe de Estudiante"
+            report_type="qweb-pdf"
+            name="academia_gestion.report_estudiante_document"
+            file="academia_gestion.report_estudiante_document"
+            print_report_name="object.name"
+        />
+    </data>
+</odoo>

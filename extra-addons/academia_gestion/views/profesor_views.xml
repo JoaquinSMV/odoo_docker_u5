@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <!-- Vista de Árbol (Listado) para Profesores -->
+        <record id="view_profesor_tree" model="ir.ui.view">
+            <field name="name">academia.profesor.tree</field>
+            <field name="model">academia.profesor</field>
+            <field name="arch" type="xml">
+                <tree string="Profesores">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="telefono"/>
+                    <field name="especialidad"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de Formulario para Profesores -->
+        <record id="view_profesor_form" model="ir.ui.view">
+            <field name="name">academia.profesor.form</field>
+            <field name="model">academia.profesor</field>
+            <field name="arch" type="xml">
+                <form string="Profesor">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="telefono"/>
+                            <field name="especialidad"/>
+                            <field name="estudiante_ids" widget="many2many_tags"/>
+                            <field name="partner_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de Búsqueda para Profesores -->
+        <record id="view_profesor_search" model="ir.ui.view">
+            <field name="name">academia.profesor.search</field>
+            <field name="model">academia.profesor</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Profesor">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="especialidad"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Acción de Ventana para Profesores -->
+        <record id="action_profesor" model="ir.actions.act_window">
+            <field name="name">Profesores</field>
+            <field name="res_model">academia.profesor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un nuevo profesor
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

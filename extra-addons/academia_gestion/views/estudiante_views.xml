@@ -1,0 +1,94 @@
+<odoo>
+    <data>
+        <!-- Vista de Árbol (Listado) para Estudiantes -->
+        <record id="view_estudiante_tree" model="ir.ui.view">
+            <field name="name">academia.estudiante.tree</field>
+            <field name="model">academia.estudiante</field>
+            <field name="arch" type="xml">
+                <tree string="Estudiantes">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="telefono"/>
+                    <field name="edad"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de Formulario para Estudiantes -->
+        <record id="view_estudiante_form" model="ir.ui.view">
+            <field name="name">academia.estudiante.form</field>
+            <field name="model">academia.estudiante</field>
+            <field name="arch" type="xml">
+                <form string="Estudiante">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="fecha_nacimiento"/>
+                            <field name="edad"/>
+                            <field name="email"/>
+                            <field name="telefono"/>
+                            <field name="direccion"/>
+                            <field name="profesor_ids" widget="many2many_tags"/>
+                            <field name="partner_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de Búsqueda para Estudiantes -->
+        <record id="view_estudiante_search" model="ir.ui.view">
+            <field name="name">academia.estudiante.search</field>
+            <field name="model">academia.estudiante</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Estudiante">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="profesor_ids"/>
+                    <filter string="Menores de 18" name="menores_18" domain="[(\'edad\', \'<\', 18)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Vista Kanban para Estudiantes -->
+        <record id="view_estudiante_kanban" model="ir.ui.view">
+            <field name="name">academia.estudiante.kanban</field>
+            <field name="model">academia.estudiante</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="profesor_ids">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="telefono"/>
+                    <field name="edad"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>Nombre: <field name="name"/></li>
+                                        <li>Email: <field name="email"/></li>
+                                        <li>Teléfono: <field name="telefono"/></li>
+                                        <li>Edad: <field name="edad"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Acción de Ventana para Estudiantes -->
+        <record id="action_estudiante" model="ir.actions.act_window">
+            <field name="name">Estudiantes</field>
+            <field name="res_model">academia.estudiante</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea un nuevo estudiante
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

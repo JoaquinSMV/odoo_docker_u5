@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <!-- Menú Principal -->
+        <menuitem id="menu_academia_root" name="Academia" sequence="10" web_icon="academia_gestion,static/description/icon.png"/>
+
+        <!-- Submenú para Estudiantes -->
+        <menuitem id="menu_academia_estudiantes" name="Estudiantes" parent="menu_academia_root" action="action_estudiante" sequence="10"/>
+
+        <!-- Submenú para Profesores -->
+        <menuitem id="menu_academia_profesores" name="Profesores" parent="menu_academia_root" action="action_profesor" sequence="20"/>
+    </data>
+</odoo>
