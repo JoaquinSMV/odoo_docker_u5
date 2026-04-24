@@ -1,3 +1,3 @@
-id,name,model_id,group_id,perm_read,perm_write,perm_create,perm_unlink
-access_academia_estudiante,academia.estudiante.access,model_academia_estudiante,base.group_user,1,1,1,1
-access_academia_profesor,academia.profesor.access,model_academia_profesor,base.group_user,1,1,1,1
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_academia_estudiante,access_academia_estudiante,model_academia_estudiante,base.group_user,1,1,1,1
+access_academia_profesor,access_academia_profesor,model_academia_profesor,base.group_user,1,1,1,1

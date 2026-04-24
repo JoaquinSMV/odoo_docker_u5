@@ -5,11 +5,11 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name=\'category_id\']" position="after">
+                <xpath expr="//field[@name='category_id']" position="after">
                     <field name="es_estudiante" invisible="1"/>
                     <field name="es_profesor" invisible="1"/>
-                    <field name="estudiante_id" attrs="{\'invisible\': [(\'es_estudiante\', \'=\', False)]}"/>
-                    <field name="profesor_id" attrs="{\'invisible\': [(\'es_profesor\', \'=\', False)]}"/>
+                    <field name="estudiante_id" invisible="not es_estudiante"/>
+                    <field name="profesor_id" invisible="not es_profesor"/>
                 </xpath>
             </field>
         </record>
