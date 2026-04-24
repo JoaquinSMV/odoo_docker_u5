@@ -9,10 +9,10 @@
     "depends": ["base"],
     "data": [
         "security/ir.model.access.csv",
-        "views/academia_menu.xml",
         "views/estudiante_views.xml",
         "views/profesor_views.xml",
         "views/res_partner_views.xml",
+        "views/academia_menu.xml",
         "report/estudiante_report_templates.xml",
         "report/estudiante_report.xml",
     ],
