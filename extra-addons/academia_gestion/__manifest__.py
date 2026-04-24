@@ -3,8 +3,8 @@
     "version": "18.0.1.0.0",
     "category": "Education",
     "summary": "Módulo para la gestión de estudiantes y profesores.",
-    "author": "Manus",
-    "website": "https://www.manus.ai",
+    "author": "",
+    "website": "",
     "license": "LGPL-3",
     "depends": ["base"],
     "data": [
